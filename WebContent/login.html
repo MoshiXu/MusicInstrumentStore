@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Login</title>
+<script> 
+function validate(){
+	var username = document.form.username.value;
+	var password = document.form.password.value;
+	
+	if (username==null || username==""){
+		alert("Username cannot be blank");
+		return false;
+	}else if(password==null || password==""){
+		alert("Password cannot be blank");
+		return false;
+	} 
+}
+</script> 
+</head>
+<body>
+
+	<h1>Login Page</h1>
+	
+	<form action="login" method="post" onsubmit="return validate()">
+		Name:<input type="text" name="username"/><br/><br/>
+		Password:<input type="password" name="password"/><br><br/>
+		<input type="submit" value="login" />
+	</form>
+	
+	<a href="register.html">Go to Register</a>
+	
+</body>
+</html>
+
+
+
+
+
+	
+	

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="ISO-8859-1">
+	<title>Welcome</title>
+	<script src="http://how2j.cn/study/js/jquery/2.0.0/jquery.min.js"></script>
+	<link href="http://how2j.cn/study/css/bootstrap/3.3.6/bootstrap.min.css" rel="stylesheet">
+	<script src="http://how2j.cn/study/js/bootstrap/3.3.6/bootstrap.min.js"></script>
+</head>
+<body>
+
+
+<!-- 
+	<form action="servlet1">  
+		Name:<input type="text" name="userName"/><br/>  
+		<input type="submit" value="go"/>  
+	</form>  
+-->
+	<h1>Shopping page</h1>
+	
+	<h4>What style would you like?Choose one</h4>
+	<form action="servlet1">
+		<input type="checkbox" name="userName" value="Piano"> Style1 <br>
+		<input type="checkbox" name="userName" value="Violin"> Style2 <br>
+		<input type="checkbox" name="userName" value="Cello" checked> Style3<br>
+		
+		
+		<table class="table table-striped">
+  			<thead>
+     			<th>Icon</th>
+     			<th>Name</th>
+     			<th>Price</th>
+  			</thead>
+  			<tbody>
+     			<tr>
+        			<td><img width="20px" src="http://how2j.cn/study/bootstrap/lol/gareen.png"/></td> 
+        			<td>Piano </td> 
+        			<td>$616</td> 
+     			</tr>
+ 				<tr>
+        			<td><img width="20px" src="http://how2j.cn/study/bootstrap/lol/teemo.png"/></td> 
+        			<td>Violin </td> 
+        			<td>$383</td> 
+     			</tr>
+ 				<tr>
+        			<td><img width="20px" src="http://how2j.cn/study/bootstrap/lol/akali.png"/></td> 
+        			<td>Bass</td> 
+        			<td>$448</td> 
+     			</tr>
+     			<tr>
+        			<td><img width="20px" src="http://how2j.cn/study/bootstrap/lol/gareen.png"/></td> 
+        			<td>Guitar </td> 
+        			<td>$616</td> 
+     			</tr>
+ 				<tr>
+        			<td><img width="20px" src="http://how2j.cn/study/bootstrap/lol/teemo.png"/></td> 
+        			<td>Bass guitar </td> 
+        			<td>$383</td> 
+     			</tr>
+ 				<tr>
+        			<td><img width="20px" src="http://how2j.cn/study/bootstrap/lol/akali.png"/></td> 
+        			<td>Cello</td> 
+        			<td>$468</td> 
+     			</tr>
+  			</tbody>
+		</table>
+		
+		
+		<input type="submit" value="checkout" class="btn class="btn btn-primary">
+		
+		<br><br>
+		<a href="register.html" class="btn btn-info">return to Registration Page</a>
+		<br>
+		<a href="login.html" class="btn btn-info">return to Login Page</a>
+	</form>
+	
+	
+</body>
+</html>
