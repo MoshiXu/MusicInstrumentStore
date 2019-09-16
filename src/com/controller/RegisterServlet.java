@@ -16,8 +16,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.DAO.ConnectionClass;
+import com.DAO.RegisterDAO;
+import com.DAO.RegisterDAOImpl;
+import com.model.RegisterBean;
 
 public class RegisterServlet extends HttpServlet{
+
 
 	@Override
 	public void doPost(HttpServletRequest req,HttpServletResponse resp) throws ServletException, IOException{
@@ -30,40 +34,26 @@ public class RegisterServlet extends HttpServlet{
 		String p=req.getParameter("password");
 		String add=req.getParameter("address");
 		
+		RegisterBean newUser=new RegisterBean();
+		newUser.setUserName(n);
+		newUser.setAge(a);
+		newUser.setPassword(p);
+		newUser.setAddress(add);
 		
+		System.out.println(newUser.toString());
+		
+		
+		RegisterDAOImpl registerDAO=new RegisterDAOImpl();
+		registerDAO.addProduct(newUser);
 		
 		out.println("Success!");  
 		out.println("welcome user: "+n);
 		out.println("your age is  : "+a);
 		out.println("please hide the passsword "+p);
 		
-		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
-			Connection con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:orcl","XDB","xuer37xdd5");
-							
-			Statement st=con.createStatement();
-			con.setAutoCommit(false);
-			
-			RequestDispatcher rd;
-			
-			String query="insert into registers values (?,?,?,?)";
-			PreparedStatement prs=con.prepareStatement(query);
-			
-			prs.setString(1,n);//name
-			prs.setInt(2, a);//age
-			prs.setString(3, p);//password
-			prs.setString(4, add);//address
-			prs.execute();  
-			
-			con.commit();
-			con.close();	
-			
-					
-		}catch(SQLException e) {
-			e.printStackTrace();
-		}catch(ClassNotFoundException e) {
-			e.printStackTrace();
-		}
+		
+		
+		
 		
 	}
 }

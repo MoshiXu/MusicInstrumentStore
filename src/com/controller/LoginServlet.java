@@ -32,16 +32,12 @@ public class LoginServlet extends HttpServlet{
 		
 		ResultSet rs;
 		RequestDispatcher rd;
-		
-		
-		
-		
-		
+				
 		LoginBean login=new LoginBean();
 		login.setName(name);
 		login.setPassword(password);
+		req.setAttribute("login", login);
 		
-		//LoginDao loginDao=new LoginDao();
 		
 		//String userValidate=loginDao.authenticateUser(loginBean);
 		

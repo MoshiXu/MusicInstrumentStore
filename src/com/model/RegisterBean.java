@@ -32,6 +32,9 @@ public class RegisterBean {
 		this.age = age;
 	}
 	
-	
+	@Override
+	public String toString() {
+		return "Name: "+userName+" age: "+age+" address: "+address;
+	}
 
 }
